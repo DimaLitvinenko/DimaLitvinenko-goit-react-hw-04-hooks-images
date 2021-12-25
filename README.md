@@ -1,12 +1,8 @@
-# goit-react-hw-03-image-finder
+# goit-react-hw-04-hooks-images
 
-# Поиск изображений
-
-Напиши приложение поиска изображений по ключевому слову.
-
-Создай компоненты `<Searchbar>`, `<ImageGallery>`, `<ImageGalleryItem>`,
-`<Loader>`, `<Button>` и `<Modal>`. Готовые стили компонентов можно взять в
-файле [styles.css](./styles.css) и подправить под себя, если необходимо.
+## Поиск изображений
+Создан репозиторий goit-react-hw-04-hooks-images.
+Проведи рефакторинг кода задания Поиск изображений используя React-хуки.
 
 ## Инструкция Pixabay API
 
