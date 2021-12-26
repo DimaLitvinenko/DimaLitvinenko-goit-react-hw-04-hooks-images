@@ -1,6 +1,5 @@
 # goit-react-hw-04-hooks-images
 
-<<<<<<< HEAD
 <!-- scroll.scrollToBottom({ duration: 500,
             delay: 1000,
             isDynamic: true,
@@ -8,14 +7,8 @@
             smooth: true, }); -->
 
 # Поиск изображений
-
-Создан репозиторий goit-react-hw-04-hooks-images. Проведи рефакторинг кода
-задания Поиск изображений используя React-хуки.
-=======
-## Поиск изображений
 Создан репозиторий goit-react-hw-04-hooks-images.
 Проведи рефакторинг кода задания Поиск изображений используя React-хуки.
->>>>>>> 7d6e9fe86a6d867009f7964c893baeacc4902095
 
 ## Инструкция Pixabay API
 
