@@ -1,74 +1,74 @@
-import { Component } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 import { ImSearch } from 'react-icons/im';
 import style from './Searchbar.module.scss';
 
-export default class Searchbar extends Component {
-   static propTypes = { searchQuery: PropTypes.string };
+export default function Searchbar({ onSubmit }) {
+   const [searchQuery, setSearchQuery] = useState('');
 
-   state = { searchQuery: '' };
-
-   handleSearchQueryChange = event => {
-      this.setState({ searchQuery: event.currentTarget.value.toLowerCase() });
+   const searchQueryChangeHandler = ({ currentTarget }) => {
+      setSearchQuery(currentTarget.value.toLowerCase());
    };
 
-   handleSubmit = event => {
+   const handleSubmit = event => {
       event.preventDefault();
 
-      if (this.state.searchQuery.trim() !== '') {
-         this.props.onSubmit(this.state.searchQuery);
-         this.setState({ searchQuery: '' });
+      if (searchQuery.trim() !== '') {
+         onSubmit(searchQuery);
+         setSearchQuery('');
       } else
-         toast.error(`The input field must not be empty! 🦄`, {
+         toast.error(`The input field shouldn't empty!`, {
             position: 'top-left',
             autoClose: 4000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
-            progress: undefined,
+            progress: 1,
          });
    };
 
-   render() {
-      return (
-         <header id="header" className={style.searchHeader}>
-            <a className={style.pixabay__logo_link} href="https://pixabay.com/">
-               <img
-                  className={style.pixabay__logo_img}
-                  src="https://pixabay.com/static/img/public/medium_rectangle_a.png"
-                  alt="Pixabay"
-               />
-            </a>
-            <form onSubmit={this.handleSubmit} className={style.searchForm}>
-               <input
-                  className={style.searchForm__input}
-                  id="input"
-                  type="text"
-                  autoComplete="off"
-                  autoFocus
-                  value={this.state.searchQuery}
-                  onChange={this.handleSearchQueryChange}
-                  placeholder=" "
-               />
-               <div className={style.cut}></div>
-               <label className={style.placeholder} htmlFor="input">
-                  Enter search image name
-               </label>
-               <button type="submit" className={style.searchForm__button}>
-                  <span className={style.searchForm__button_label}>Search</span>
-                  <ImSearch />
-               </button>
-            </form>
-            <a className={style.pixabay__logo_link} href="https://pixabay.com/">
-               <img
-                  className={style.pixabay__logo_img}
-                  src="https://pixabay.com/static/img/public/medium_rectangle_a.png"
-                  alt="Pixabay"
-               />
-            </a>
-         </header>
-      );
-   }
+   return (
+      <header id="header" className={style.searchHeader}>
+         <a className={style.pixabay__logo_link} href="https://pixabay.com/">
+            <img
+               className={style.pixabay__logo_img}
+               src="https://pixabay.com/static/img/public/medium_rectangle_a.png"
+               alt="Pixabay-service-logo"
+            />
+         </a>
+
+         <form onSubmit={handleSubmit} className={style.searchForm}>
+            <input
+               className={style.searchForm__input}
+               id="input"
+               type="text"
+               autoComplete="off"
+               autoFocus
+               value={searchQuery}
+               onChange={searchQueryChangeHandler}
+               placeholder=" "
+            />
+            <div className={style.cut}></div>
+            <label className={style.placeholder} htmlFor="input">
+               Enter search image name
+            </label>
+            <button type="submit" className={style.searchForm__button}>
+               <span className={style.searchForm__button_label}>Search</span>
+               <ImSearch />
+            </button>
+         </form>
+
+         <a className={style.pixabay__logo_link} href="https://pixabay.com/">
+            <img
+               className={style.pixabay__logo_img}
+               src="https://pixabay.com/static/img/public/medium_rectangle_a.png"
+               alt="Pixabay-service-logo"
+            />
+         </a>
+      </header>
+   );
 }
+
+Searchbar.propTypes = { searchQuery: PropTypes.string };

@@ -1,5 +1,6 @@
 import style from './Button.module.scss';
 import { FaDownload } from 'react-icons/fa';
+
 export default function LoadMoreButton({ onLoadMore }) {
    return (
       <button onClick={onLoadMore} type="button" className={style.button}>

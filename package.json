@@ -1,8 +1,8 @@
 {
-  "name": "goit-react-hw-03-image-finder",
+  "name": "goit-react-hw-04-hooks-images",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://DimaLitvinenko.github.io/goit-react-hw-03-image-finder",
+  "homepage": "https://DimaLitvinenko.github.io/goit-react-hw-04-hooks-images",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^11.2.7",
@@ -37,7 +37,8 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app"
+      "react-app",
+      "plugin:react-hooks/recommended"
     ]
   },
   "browserslist": {
@@ -54,6 +55,7 @@
   },
   "devDependencies": {
     "eslint": "^7.11.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "husky": ">=6",
     "lint-staged": ">=10",
     "modern-normalize": "^1.1.0",
