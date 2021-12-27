@@ -71,7 +71,7 @@ export default function App() {
             </h1>
          )}
 
-         {status === 'rejected' && <h1>{error.message}</h1>}
+         {status === 'rejected' && <h2>{error.message}</h2>}
 
          {status === 'resolved' && (
             <>
@@ -81,7 +81,11 @@ export default function App() {
                      onLoadMore={() => setPage(prevState => prevState + 1)}
                   />
                )}
-               {images.length === 0 && <div>{searchQuery} - not detected</div>}
+               {images.length === 0 && (
+                  <h2 className={style.app__title}>
+                     '{searchQuery}' - not detected
+                  </h2>
+               )}
             </>
          )}
 
