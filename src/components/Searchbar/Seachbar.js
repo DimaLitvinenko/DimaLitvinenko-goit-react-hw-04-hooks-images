@@ -18,14 +18,13 @@ export default function Searchbar({ onSubmit }) {
          onSubmit(searchQuery);
          setSearchQuery('');
       } else
-         toast.error(`The input field shouldn't empty!`, {
+         toast.error(`The input field shouldn't be empty!`, {
             position: 'top-left',
             autoClose: 4000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
-            progress: 1,
          });
    };
 
