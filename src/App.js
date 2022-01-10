@@ -45,14 +45,12 @@ export default function App() {
             setImages(prevState => [...prevState, ...articles.hits]);
             setStatus('resolved');
          } else {
-            return Promise.reject(
-               new Error(`${searchQuery} - matches not detected!`),
-            );
+            return Promise.reject(new Error(`${searchQuery} - matches not detected!`));
          }
       } catch (error) {
          setError(error);
          setStatus('rejected');
-         toast.error('The input field shouldn`t empty!');
+         toast.error('The entry field must be filled in!');
       }
    };
 
@@ -77,14 +75,10 @@ export default function App() {
             <>
                <ImageGallery images={images} onOpenModal={toggleModal} />
                {images.length !== 0 && (
-                  <Button
-                     onLoadMore={() => setPage(prevState => prevState + 1)}
-                  />
+                  <Button onLoadMore={() => setPage(prevState => prevState + 1)} />
                )}
                {images.length === 0 && (
-                  <h2 className={style.app__title}>
-                     '{searchQuery}' - not detected
-                  </h2>
+                  <h2 className={style.app__title}>'{searchQuery}' - not detected!</h2>
                )}
             </>
          )}
